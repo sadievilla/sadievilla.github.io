@@ -5,27 +5,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>J.S.V.</title>
+  <script>
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
 </head>
 
-<body class="bg-neutral-900 text-neutral-200 font-sans antialiased">
+<body class="font-sans antialiased
+             bg-neutral-100 text-neutral-900
+             dark:bg-neutral-900 dark:text-neutral-200">
   <div class="max-w-5xl mx-auto px-6 py-16">
+    <div class="flex justify-end mb-6">
+      <button id="theme-toggle" class="text-xs px-3 py-1 rounded-full border
+                   bg-neutral-200 border-neutral-300 text-neutral-900
+                   hover:bg-neutral-300
+                   dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-700">
+        Dark mode
+      </button>
+    </div>
     <div class="flex gap-10 items-start">
       <div class="flex-column gap-10 items-start">
-        <img src="assets/pfp.jpg" class="w-[250px] h-[340px] object-cover rounded-md border border-neutral-700"
-          alt="Profile photo">
+        <img src="assets/pfp.jpg" class="w-[250px] h-[340px] object-cover rounded-md
+            border border-neutral-300
+            dark:border-neutral-700 shrink-0" alt="Profile photo">
         <!-- contact -->
         <section class="mt-8 flex flex-wrap gap-4">
-          <a href="sadienueva[at]gmail[dot]com"
-            class="px-4 py-2 rounded-md bg-neutral-800 border border-neutral-700 hover:bg-neutral-700 transition">
+          <a href="sadienueva[at]gmail[dot]com" class="px-4 py-2 rounded-md border text-sm transition
+       bg-neutral-100 border-neutral-300 text-neutral-900 hover:bg-neutral-200
+       dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-700">
             Email
           </a>
-          <a href="https://www.linkedin.com/in/sadievillanueva"
-            class="px-4 py-2 rounded-md bg-neutral-800 border border-neutral-700 hover:bg-neutral-700 transition">
+          <a href="https://www.linkedin.com/in/sadievillanueva" class="px-4 py-2 rounded-md border text-sm transition
+       bg-neutral-100 border-neutral-300 text-neutral-900 hover:bg-neutral-200
+       dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-700">
             LinkedIn
           </a>
-          <a href="https://github.com/jss2326"
-            class="px-4 py-2 rounded-md bg-neutral-800 border border-neutral-700 hover:bg-neutral-700 transition">
+          <a href="https://github.com/jss2326" class="px-4 py-2 rounded-md border text-sm transition
+       bg-neutral-100 border-neutral-300 text-neutral-900 hover:bg-neutral-200
+       dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-700">
             GitHub
           </a>
         </section>
@@ -61,14 +91,18 @@
 
         <!-- work & reeeeesearch cards -->
         <section class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <a href="work/index.html"
-            class="block bg-neutral-800/40 border border-neutral-700 rounded-xl p-6 hover:bg-neutral-800 transition">
+          <a href="work/index.html" class="block rounded-xl p-6 transition
+       bg-white/80 border border-neutral-200 hover:bg-neutral-50
+       dark:bg-neutral-800/40 dark:border-neutral-700 dark:hover:bg-neutral-800">
+
             <h2 class="text-xl font-semibold text-white mb-2">Work</h2>
             <p class="text-neutral-400">NASA JPL · MIT LL</p>
           </a>
 
-          <a href="research/index.html"
-            class="block bg-neutral-800/40 border border-neutral-700 rounded-xl p-6 hover:bg-neutral-800 transition">
+          <a href="research/index.html" class="block rounded-xl p-6 transition
+       bg-white/80 border border-neutral-200 hover:bg-neutral-50
+       dark:bg-neutral-800/40 dark:border-neutral-700 dark:hover:bg-neutral-800">
+
             <h2 class="text-xl font-semibold text-white mb-2">Research</h2>
             <p class="text-neutral-400">UPenn · MSU · LSAMP</p>
           </a>
@@ -77,6 +111,36 @@
     </div>
   </div>
 
+  <script>
+      (function () {
+        const btn = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+
+        function currentTheme() {
+          return root.classList.contains('dark') ? 'dark' : 'light';
+        }
+        function applyTheme(theme) {
+          if (theme === 'dark') {
+            root.classList.add('dark');
+            localStorage.theme = 'dark';
+            if (btn) btn.textContent = 'Light mode';
+          } else {
+            root.classList.remove('dark');
+            localStorage.theme = 'light';
+            if (btn) btn.textContent = 'Dark mode';
+          }
+        }
+        applyTheme(currentTheme());
+
+        if (btn) {
+          btn.addEventListener('click', () => {
+            const next = currentTheme() === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+          });
+        }
+      })();
+  </script>
+</body>
 </body>
 
 </html>

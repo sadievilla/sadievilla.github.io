@@ -1,17 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Research</title>
+  <script>
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
 </head>
 
-<body class="bg-neutral-900 text-neutral-200 font-sans">
+<body class="font-sans antialiased
+             bg-neutral-100 text-neutral-900
+             dark:bg-neutral-900 dark:text-neutral-200">
   <div class="max-w-3xl mx-auto px-6 py-16">
+    <div class="flex justify-end mb-6">
+      <button id="theme-toggle" class="text-xs px-3 py-1 rounded-full border
+                   bg-neutral-200 border-neutral-300 text-neutral-900
+                   hover:bg-neutral-300
+                   dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-700">
+        Dark mode
+      </button>
+    </div>
     <a href="../index.html" class="text-sm text-neutral-400 hover:text-neutral-200">&larr; Home</a>
     <h1 class="mt-4 text-3xl font-bold text-white">Research</h1>
-    <p class="mt-2 text-neutral-400">Applied Mathematics · Graph Theory ·  Modeling ·  Simulation · Biomedical Statistics</p>
+    <p class="mt-2 text-neutral-400">Applied Mathematics · Graph Theory · Modeling · Simulation · Biomedical Statistics
+    </p>
     <div class="mt-10 space-y-10">
       <section>
         <h2 class="text-xl font-semibold text-white">Graph Theory</h2>
@@ -35,5 +63,35 @@
       </section>
     </div>
   </div>
+  <script>
+      (function () {
+        const btn = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+
+        function currentTheme() {
+          return root.classList.contains('dark') ? 'dark' : 'light';
+        }
+        function applyTheme(theme) {
+          if (theme === 'dark') {
+            root.classList.add('dark');
+            localStorage.theme = 'dark';
+            if (btn) btn.textContent = 'Light mode';
+          } else {
+            root.classList.remove('dark');
+            localStorage.theme = 'light';
+            if (btn) btn.textContent = 'Dark mode';
+          }
+        }
+        applyTheme(currentTheme());
+
+        if (btn) {
+          btn.addEventListener('click', () => {
+            const next = currentTheme() === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+          });
+        }
+      })();
+  </script>
 </body>
+
 </html>
