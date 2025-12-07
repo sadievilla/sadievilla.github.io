@@ -30,25 +30,36 @@
 
   <div class="max-w-3xl mx-auto px-6 py-16">
     <div class="flex justify-end mb-6">
-      <button id="theme-toggle" class="text-xs px-3 py-1 rounded-full border
-                   bg-neutral-200 border-neutral-300 text-neutral-900
-                   hover:bg-neutral-300
-                   dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-700">
-        Dark mode
+      <button id="theme-toggle" class="px-3 py-1.5 rounded-md border text-sm flex transition
+               bg-neutral-100 border-neutral-300 text-neutral-900 hover:bg-neutral-200
+               dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-700">
+        <!-- light mode -->
+        <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414m12.728 0l-1.414-1.414M7.05 7.05L5.636 5.636M12 8a4 4 0 100 8 4 4 0 000-8z" />
+        </svg>
+        <!-- dark mode -->
+        <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M21 12.79A9 9 0 1111.21 3a7 7 0 0010.02 9.79z" />
+        </svg>
+        <span id="theme-label"></span>
       </button>
     </div>
     <a href="../index.html" class="text-sm text-neutral-400 hover:text-neutral-200">&larr; Home</a>
-    <h1 class="mt-4 text-3xl font-bold text-white">Work</h1>
+    <h1 class="mt-4 text-3xl font-bold text-neutral-700 dark:text-neutral-300">Work</h1>
     <p class="mt-2 text-neutral-400">NASA Jet Propulsion Laboratory · MIT Lincoln Labs </p>
     <div class="mt-10 space-y-10">
       <section>
-        <h2 class="text-xl font-semibold text-white">NASA Jet Propulsion Laboratory — AI &amp; Data Science</h2>
+        <h2 class="text-xl font-semibold text-neutral-700 dark:text-neutral-300">NASA Jet Propulsion Laboratory — AI &amp; Data Science</h2>
         <p class="mt-2 text-neutral-400">
           Machine learning research and chat tool development to support JPL space mission operations.
         </p>
       </section>
 
-      <h2 class="text-xl font-semibold text-white">NASA Jet Propulsion Laboratory — Mission Control Systems</h2>
+      <h2 class="text-xl font-semibold text-neutral-700 dark:text-neutral-300">NASA Jet Propulsion Laboratory — Mission Control Systems</h2>
       <p class="mt-2 text-neutral-400">
         Creating interactive analytics tools, visualization dashboards, and RAG frameworks.
         <i>Technologies: Python, Grafana, Next.js, TailwindCSS.</i>
@@ -56,7 +67,7 @@
       </section>
 
       <section>
-        <h2 class="text-xl font-semibold text-white">NASA Jet Propulsion Laboratory — Mission Control Systems</h2>
+        <h2 class="text-xl font-semibold text-neutral-700 dark:text-neutral-300">NASA Jet Propulsion Laboratory — Mission Control Systems</h2>
         <p class="mt-2 text-neutral-400">
           Visualization system interface and physics model development.
           <i>Technologies: Python, TypeScript, React, Babylon.js, MobX.</i>
@@ -66,9 +77,23 @@
   </div>
   <script>
       (function () {
-        const btn = document.getElementById('theme-toggle');
         const root = document.documentElement;
+        const btn = document.getElementById('theme-toggle');
+        const label = document.getElementById('theme-label');
+        const sun = document.getElementById('icon-sun');
+        const moon = document.getElementById('icon-moon');
 
+        function setIcons(theme) {
+          if (theme === 'dark') {
+            sun.classList.remove('hidden');
+            moon.classList.add('hidden');
+            // label.textContent = 'Light';
+          } else {
+            sun.classList.add('hidden');
+            moon.classList.remove('hidden');
+            // label.textContent = 'Dark';
+          }
+        }
         function currentTheme() {
           return root.classList.contains('dark') ? 'dark' : 'light';
         }
@@ -76,21 +101,17 @@
           if (theme === 'dark') {
             root.classList.add('dark');
             localStorage.theme = 'dark';
-            if (btn) btn.textContent = 'Light mode';
           } else {
             root.classList.remove('dark');
             localStorage.theme = 'light';
-            if (btn) btn.textContent = 'Dark mode';
           }
+          setIcons(theme);
         }
         applyTheme(currentTheme());
 
-        if (btn) {
-          btn.addEventListener('click', () => {
-            const next = currentTheme() === 'dark' ? 'light' : 'dark';
-            applyTheme(next);
-          });
-        }
+        btn.addEventListener('click', () => {
+          applyTheme(currentTheme() === 'dark' ? 'light' : 'dark');
+        });
       })();
   </script>
 </body>
