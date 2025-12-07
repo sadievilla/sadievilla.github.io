@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Work</title>
+  <title>J.S.V.</title>
   <script>
     if (
       localStorage.theme === 'dark' ||
@@ -16,6 +16,21 @@
       document.documentElement.classList.remove('dark');
     }
   </script>
+  <style>
+    @keyframes spin-slow {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .spin-slow {
+      animation: spin-slow 20s linear infinite;
+    }
+  </style>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -49,7 +64,9 @@
       </button>
     </div>
     <a href="../index.html" class="text-sm text-neutral-400 hover:text-neutral-200">&larr; Home</a>
+    <div class="flex gap-5">
     <h1 class="mt-4 text-3xl font-bold text-neutral-700 dark:text-neutral-300">Work</h1>
+      </div>
     <p class="mt-2 text-neutral-400">NASA Jet Propulsion Laboratory · MIT Lincoln Labs </p>
     <div class="mt-10 space-y-10">
       <section>

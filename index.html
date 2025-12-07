@@ -16,12 +16,19 @@
       document.documentElement.classList.remove('dark');
     }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
+    @keyframes spin-slow {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .spin-slow {
+      animation: spin-slow 20s linear infinite;
     }
   </style>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -30,13 +37,15 @@
       darkMode: 'class'
     }
   </script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 
 <body class="font-sans antialiased
              bg-neutral-100 text-neutral-900
              dark:bg-neutral-900 dark:text-neutral-200">
   <div class="max-w-5xl mx-auto px-6 py-16">
-    <div class="flex justify-end mb-6">
+    <!-- theme toggle -->
+    <div class="flex justify-end">
       <button id="theme-toggle" class="px-3 py-1.5 rounded-md border text-sm flex transition
                bg-neutral-100 border-neutral-300 text-neutral-900 hover:bg-neutral-200
                dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-700">
@@ -55,15 +64,15 @@
         <span id="theme-label"></span>
       </button>
     </div>
-    <div class="flex gap-10 items-start">
-      <div class="flex-column gap-10 items-start">
+    <div class="flex gap-14">
+      <!-- pfp & contact-->
+      <div class="flex-column mt-14">
         <img src="assets/pfp.jpg" class="w-[250px] h-[340px] object-cover
             border rounded-xl border border-neutral-300 
             shadow-md shadow-black/10
             dark:border-neutral-700 dark:shadow-black/40" alt="Profile photo">
-        <!-- contact -->
         <section class="mt-8 flex flex-wrap gap-4">
-          <a href="sadienueva[at]gmail[dot]com" class="px-4 py-2 rounded-md border text-sm transition
+          <a href="sadienueva@gmail.com" class="px-4 py-2 rounded-md border text-sm transition
        bg-neutral-100 border-neutral-300 text-neutral-900 hover:bg-neutral-200
        dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-700">
             Email
@@ -80,34 +89,35 @@
           </a>
         </section>
       </div>
-
       <div class="flex-1">
         <!-- header -->
-        <header class="flex items-center space-x-6">
+        <header class="flex items-center">
           <div>
             <h1 class="text-4xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Jessica Sadie
               Villanueva</h1>
             <p class="mt-2 text-neutral-600 dark:text-neutral-400">Building intelligent systems that help people explore
-              and understand complex
-              worlds ₊⟡⋆</p>
+              and understand complex worlds ₊⟡⋆</p>
           </div>
+          <model-viewer src="assets/cat.glb" alt="3D Cat" auto-rotate rotation-per-second="20deg" camera-controls
+                orientation="0deg 0deg 250deg" disable-zoom interaction-prompt="none" style="width: 300px; height: 200px;">
+          </model-viewer>
         </header>
 
         <!-- bio -->
-        <section class="mt-10 space-y-4 text-neutral-700 dark:text-neutral-300 leading-relaxed">
+        <section class="mt-2 space-y-4 text-neutral-700 dark:text-neutral-300 leading-relaxed">
           <p>
-            Hi! I'm Jessica, a graduate student in Applied Mathematics at Columbia University focusing on scientific
-            computing
-            and interdisciplinary applications of machine learning. My previous internships involve transformer-based
-            data
-            analysis,
-            compound AI, and simulation systems.
+            Hi! I'm Sadie <i>(she/her)</i>, a graduate student in Applied Mathematics at Columbia University interested
+            in the intersection of
+            math and computer science, particularly interdisciplinary applications of machine learning.
           </p>
-
           <p>
-            I currently intern at NASA’s Jet Propulsion Laboratory in the AI & Data Science Section.
-            I have also conducted research in pure and applied mathematics across science and engineering.
-            Always happy to connect – please feel free to reach out!
+            My work experience
+            includes <b>simulation- and transformer-based data analysis, compound AI,</b> and <b>scientific software
+              development</b>. I currently intern at NASA’s Jet Propulsion Laboratory in the
+            AI & Data Science Section where I explore this research.
+          </p>
+          <p>
+            <i>I'm always happy to connect – please feel free to reach out!</i>
           </p>
         </section>
 
