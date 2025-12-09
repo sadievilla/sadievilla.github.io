@@ -16,21 +16,6 @@
       document.documentElement.classList.remove('dark');
     }
   </script>
-  <style>
-    @keyframes spin-slow {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .spin-slow {
-      animation: spin-slow 20s linear infinite;
-    }
-  </style>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -38,6 +23,8 @@
     }
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 
@@ -69,7 +56,7 @@
       <!-- left col -->
       <div class="flex-column mt-14">
         <!-- pfp -->
-        <img src="assets/pfp.jpg" class="w-[250px] h-[340px] object-cover
+        <img src="assets/pfp.jpg" class="w-[240px] h-[340px] 
             border rounded-xl border border-neutral-300 
             shadow-md shadow-black/10
             dark:border-neutral-700 dark:shadow-black/40" alt="Profile photo">
@@ -112,10 +99,11 @@
             <h1 class="text-4xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Jessica Sadie
               Villanueva</h1>
             <p class="mt-2 text-neutral-600 dark:text-neutral-400">Building intelligent systems that help people explore
-              and understand complex worlds ₊⟡⋆</p>
+              and understand different worlds ₊⟡⋆</p>
           </div>
           <model-viewer src="assets/cat.glb" alt="3D Cat" auto-rotate rotation-per-second="20deg" camera-controls
-            orientation="0deg 0deg 250deg" disable-zoom interaction-prompt="none" style="width: 300px; height: 200px;">
+            class="no-scrollbar" orientation="0deg 0deg 250deg" disable-zoom interaction-prompt="none"
+            style="width: 300px; height: 200px;">
           </model-viewer>
         </header>
 
@@ -127,9 +115,8 @@
             math and computer science, particularly interdisciplinary applications of machine learning.
           </p>
           <p>
-            My work experience
-            includes <b>simulation- and transformer-based data analysis, compound AI,</b> and <b>scientific software
-              development</b>. I currently intern at NASA’s Jet Propulsion Laboratory in the
+            My work experience includes <b>simulation- and transformer-based data analysis, compound AI,</b> and
+            <b>space science & engineering projects</b>. I currently intern at NASA’s Jet Propulsion Laboratory in the
             AI & Data Science Section where I explore this research.
           </p>
         </section>
@@ -147,9 +134,8 @@
   </div>
 
   <!-- experience -->
-  <section class="max-w-6xl mx-auto px-10">
-    <hr>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mt-4">
+  <section class="max-w-6xl mx-auto p-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
       <!-- left -->
       <div>
         <h2 class="text-3xl font-semibold">Work Experience</h2>
@@ -198,6 +184,51 @@
     </div>
   </section>
 
+  <!-- communities -->
+  <section>
+    
+    <div>
+      <h2 class="text-3xl font-semibold m-10 p-10">My Communities</h2>
+    </div>
+    <div class="w-full max-w-7xl mx-auto flex md:flex-row items-start justify-between gap-[90px] overflow-visible">
+      <div>
+        <img src="assets/csi.png" class="w-30 h-24 rounded-2xl shadow-md mb-6" />
+        <h2 class="text-3xl font-semibold mb-4">Columbia Space Initiative</h2>
+        <p class="text-neutral-500 leading-relaxed">
+          Columbia’s largest engineering club dedicated to the pursuit of knowledge in near-space, space, and beyond.
+        </p>
+      </div>
+      <div class="flex-col items-center gap-6 overflow-x-visible overflow-y-visible pb-6 snap-x no-scrollbar">
+        <div class="snap-start shrink-0 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-xl rounded-lg p-2 rotate-[-4deg] w-64">
+          <img src="assets/csi-jpl.jpg" class="rounded-md w-full h-40 object-cover" />
+          <p class="text-xs text-neutral-400 mt-1">CSI at JPL!</p>
+        </div>
+        <div class="snap-start shrink-0 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-xl rounded-lg p-2 rotate-[2deg] w-64">
+          <img src="assets/suits.png" class="rounded-md w-full h-40 object-cover" />
+          <p class="text-xs text-neutral-400 mt-1">
+            2024 NASA SUITS Mission
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center gap-10 overflow-x-visible overflow-y-visible pb-6 snap-x no-scrollbar">
+        <div>
+          <img src="assets/amps.png" class="w-30 h-24 rounded-2xl shadow-md mb-6" />
+          <h2 class="text-3xl font-semibold mb-4">AMPS Student Board</h2>
+          <p class="text-neutral-500 leading-relaxed">
+            We represent all graduate students in the applied math & applied physics department and work to enhance
+            their
+            experience at Columbia.
+          </p>
+        </div>
+        <div class="flex items-center gap-6 overflow-x-visible overflow-y-visible pb-6 snap-x no-scrollbar">
+          <div class="snap-start shrink-0 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-xl rounded-lg p-2 rotate-[-4deg] w-64">
+            <img src="assets/board.jpg" class="rounded-md w-full h-40 object-cover" />
+            <p class="text-xs text-neutral-400 mt-1">Our Board!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <script>
       (function () {
