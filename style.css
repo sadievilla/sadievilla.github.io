@@ -169,3 +169,8 @@ body {
 .spin-slow {
     animation: spin-slow 20s linear infinite;
 }
+
+model-viewer {
+  --progress-bar-height: 0;
+  --progress-bar-color: transparent;
+}
