@@ -37,6 +37,7 @@
       darkMode: 'class'
     }
   </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 
@@ -65,30 +66,45 @@
       </button>
     </div>
     <div class="flex gap-14">
-      <!-- pfp & contact-->
+      <!-- left col -->
       <div class="flex-column mt-14">
+        <!-- pfp -->
         <img src="assets/pfp.jpg" class="w-[250px] h-[340px] object-cover
             border rounded-xl border border-neutral-300 
             shadow-md shadow-black/10
             dark:border-neutral-700 dark:shadow-black/40" alt="Profile photo">
-        <section class="mt-8 flex flex-wrap gap-4">
-          <a href="sadienueva@gmail.com" class="px-4 py-2 rounded-md border text-sm transition
-       bg-neutral-100 border-neutral-300 text-neutral-900 hover:bg-neutral-200
-       dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-700">
-            Email
-          </a>
-          <a href="https://www.linkedin.com/in/sadievillanueva" class="px-4 py-2 rounded-md border text-sm transition
-       bg-neutral-100 border-neutral-300 text-neutral-900 hover:bg-neutral-200
-       dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-700">
-            LinkedIn
-          </a>
-          <a href="https://github.com/jss2326" class="px-4 py-2 rounded-md border text-sm transition
-       bg-neutral-100 border-neutral-300 text-neutral-900 hover:bg-neutral-200
-       dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-700">
-            GitHub
-          </a>
+        <!-- contact -->
+        <section class="mt-4 flex flex-wrap gap-4">
+          <ul class="ml-1.5 space-y-3 text-lg">
+            <li class="flex items-center space-x-3">
+              <span class="text-neutral-600 dark:text-neutral-300">
+                <i class="fa-brands fa-github"></i>
+              </span>
+              <a href="https://github.com/jss2326" class="text-blue-600 hover:underline">
+                Github
+              </a>
+            </li>
+
+            <li class="flex items-center space-x-3">
+              <span class="text-neutral-600 dark:text-neutral-300">
+                <i class="fa-brands fa-linkedin"></i>
+              </span>
+              <a href="https://linkedin.com/in/sadievillanueva" class="text-blue-600 hover:underline">
+                LinkedIn
+              </a>
+            </li>
+            <li class="flex items-center space-x-3">
+              <span class="text-neutral-600 dark:text-neutral-300">
+                <i class="fa-solid fa-envelope"></i>
+              </span>
+              <a href="mailto:jss2326@columbia.edu" class="text-blue-600 hover:underline">
+                Email
+              </a>
+            </li>
+          </ul>
         </section>
       </div>
+      <!-- right col -->
       <div class="flex-1">
         <!-- header -->
         <header class="flex items-center">
@@ -99,7 +115,7 @@
               and understand complex worlds ₊⟡⋆</p>
           </div>
           <model-viewer src="assets/cat.glb" alt="3D Cat" auto-rotate rotation-per-second="20deg" camera-controls
-                orientation="0deg 0deg 250deg" disable-zoom interaction-prompt="none" style="width: 300px; height: 200px;">
+            orientation="0deg 0deg 250deg" disable-zoom interaction-prompt="none" style="width: 300px; height: 200px;">
           </model-viewer>
         </header>
 
@@ -116,32 +132,72 @@
               development</b>. I currently intern at NASA’s Jet Propulsion Laboratory in the
             AI & Data Science Section where I explore this research.
           </p>
-          <p>
-            <i>I'm always happy to connect – please feel free to reach out!</i>
-          </p>
         </section>
 
-        <!-- work & reeeeesearch cards -->
-        <section class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <a href="work/index.html" class="block rounded-xl p-6 transition
+        <!-- message block -->
+        <section class="mt-12 grid sm:grid-cols- w-full">
+          <a class="block sm:w-[550px] rounded-xl p-6 transition
        bg-white/80 border border-neutral-200 hover:bg-neutral-50
        dark:bg-neutral-800/40 dark:border-neutral-700 dark:hover:bg-neutral-800">
-
-            <h2 class="text-xl font-semibold text-neutral-700 dark:text-neutral-300 mb-2">Work</h2>
-            <p class="text-neutral-400">NASA JPL · MIT LL</p>
-          </a>
-
-          <a href="research/index.html" class="block rounded-xl p-6 transition
-       bg-white/80 border border-neutral-200 hover:bg-neutral-50
-       dark:bg-neutral-800/40 dark:border-neutral-700 dark:hover:bg-neutral-800">
-
-            <h2 class="text-xl font-semibold text-neutral-700 dark:text-neutral-300 mb-2">Research</h2>
-            <p class="text-neutral-400">UPenn · MSU · LSAMP</p>
+            <p class="text-neutral-400"> <i>I'm always happy to connect – please feel free to reach out!</i></p>
           </a>
         </section>
       </div>
     </div>
   </div>
+
+  <!-- experience -->
+  <section class="max-w-6xl mx-auto px-10">
+    <hr>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mt-4">
+      <!-- left -->
+      <div>
+        <h2 class="text-3xl font-semibold">Work Experience</h2>
+      </div>
+
+      <!-- right col -->
+      <!-- TODO: fix formatting -->
+      <div class="flex items-start flex-col space-y-14 -ml-10">
+        <div class="flex items-start flex-shrink-0">
+          <img src="assets/nasa.gif" class="w-48 -ml-10" />
+          <div class="-ml-4 mt-4">
+            <h3 class="text-xl font-semibold">NASA JPL</h3>
+            <p>AI & Data Science Section</p>
+            <p class="text-neutral-500">Machine Learning Research Intern · 2025–Present</p>
+            <br>
+            <p>Mission Control Systems Section</p>
+            <p class="text-neutral-500">Academic-Year Software Engineer Intern · 2023–2025</p>
+            <p class="text-neutral-500">Software Engineer Intern · Summer 2023, 2024, 2025</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-12">
+          <img src="assets/ll-black.png" class="block dark:hidden w-14 ml-7">
+          <img src="assets/ll-white.png" class="hidden dark:block w-14 ml-7">
+          <div>
+            <h3 class="text-xl font-semibold">MIT LL</h3>
+            <p class="text-neutral-500">Student Research Intern · Summer 2025</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-6">
+          <img src="assets/nsf.png" class="w-28" />
+          <div>
+            <h3 class="text-xl font-semibold">LSAMP</h3>
+            <p class="text-neutral-500">Undergraduate Student Researcher · 2021–2024</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-6">
+          <img src="assets/upenn.png" class="w-28" />
+          <div>
+            <h3 class="text-xl font-semibold">University of Pennsylvania</h3>
+            <p class="text-neutral-500">Undergraduate Research Intern · 2021–2022</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
 
   <script>
       (function () {
