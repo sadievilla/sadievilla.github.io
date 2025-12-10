@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>J.S.V.</title>
+  <title>Welcome!</title>
   <script>
     if (
       localStorage.theme === 'dark' ||
@@ -24,14 +24,14 @@
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-
+  <link rel="icon" type="image/png" href="assets/earth.png">
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 
 <body class="font-sans antialiased
              bg-sky-50 text-neutral-900
              dark:bg-neutral-900 dark:text-neutral-200">
-  <div class="max-w-5xl mx-auto px-6 py-10">
+  <div class="max-w-5xl mx-auto p-6">
     <!-- theme toggle -->
     <div class="flex justify-end">
       <button id="theme-toggle" class="px-3 py-1.5 rounded-md border text-sm flex transition
@@ -52,11 +52,11 @@
         <span id="theme-label"></span>
       </button>
     </div>
-    <div class="flex gap-14">
+    <div class="flex flex-col md:flex-row gap-10 md:gap-14">
       <!-- left col -->
       <div class="flex-column mt-14">
         <!-- pfp -->
-        <img src="assets/pfp.jpg" class="w-[240px] h-[340px]
+        <img src="assets/pfp.jpg" class="w-40 sm:w-56 md:w-[240px] h-auto
             border rounded-xl border border-neutral-300 
             shadow-md shadow-black/10
             dark:border-neutral-700 dark:shadow-black/40" alt="Profile photo">
@@ -94,41 +94,45 @@
       <!-- right col -->
       <div class="flex-1">
         <!-- header -->
-        <header class="flex items-center">
+        <header class="flex items-center mt-10">
           <div>
             <h1 class="text-4xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Jessica Sadie
               Villanueva</h1>
-            <p class="mt-2 text-neutral-600 dark:text-neutral-400">Building intelligent systems that help people explore
-              and understand complex worlds ₊⟡⋆.</p>
+            <p class="mt-2 text-neutral-600 dark:text-neutral-400">Student & Research Intern ₊⟡⋆.</p>
           </div>
-          <model-viewer src="assets/cat.glb" alt="3D Cat" auto-rotate rotation-per-second="20deg" camera-controls
-            class="no-scrollbar" orientation="0deg 0deg 250deg" disable-zoom interaction-prompt="none"
-            style="width: 300px; height: 200px;">
-          </model-viewer>
         </header>
 
         <!-- bio -->
-        <section class="mt-2 space-y-4 text-neutral-700 dark:text-neutral-300 leading-relaxed">
+        <section class="mt-10 space-y-6 text-neutral-700 dark:text-neutral-300 leading-relaxed max-w-full break-words">
           <p>
-            Hi! I'm Sadie <i>(she/her)</i>, a graduate student in Applied Mathematics at Columbia University interested
+            Hi! I'm Jessica <i>(she/her)</i>, a graduate student in Applied Mathematics at Columbia University
+            interested
             in the intersection of math and computer science. My goal is to build responsible software that supports
             research, analysis, and operations in interdisciplinary fields.
           </p>
           <p>
-            My experience includes <b>simulation- and transformer-based data analysis, compound AI,</b> and
-            <b>data engineering projects</b>. I currently intern in the AI & Data Science section at NASA JPL where I
+            My experience includes projects in simulation, data exploration, and applied machine learning. I currently
+            intern in the AI & Data Science section at NASA JPL where I
             explore this research.
           </p>
         </section>
 
         <!-- message block -->
-        <section class="mt-12 grid sm:grid-cols- w-full">
-          <a class="block sm:w-[550px] rounded-xl p-6 transition
-       bg-neutral-50 border border-neutral-200
-       dark:bg-neutral-800/40 dark:border-neutral-700 dark:hover:bg-neutral-800">
-            <p class="text-neutral-400"> <i>I'm always happy to connect – please feel free to reach out!</i></p>
+        <section class="mt-4 flex w-full items-center">
+          <a class="block max-w-[550px] rounded-xl p-6 transition
+     bg-neutral-50 border border-neutral-200
+     dark:bg-neutral-800/40 dark:border-neutral-700 dark:hover:bg-neutral-800">
+            <p class="text-neutral-400">
+              <i>I'm always happy to connect – please feel free to reach out!</i>
+            </p>
           </a>
+          <model-viewer src="assets/cat.glb" alt="3D Cat" auto-rotate rotation-per-second="20deg" camera-controls
+            class="no-scrollbar w-40 h-32 sm:w-52 sm:h-40 md:w-[300px] md:h-[200px]" orientation="0deg 0deg 250deg"
+            disable-zoom interaction-prompt="none">
+          </model-viewer>
         </section>
+
+
       </div>
     </div>
   </div>
@@ -140,12 +144,13 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
       <!-- left -->
       <div>
-        <h2 class="text-3xl ml-24 font-semibold">Work Experience</h2>
+        <h2 class="text-3xl pl-10 font-semibold">Work Experience</h2>
       </div>
 
       <!-- right col -->
       <!-- TODO: fix formatting -->
-      <div class="flex items-start flex-col space-y-14 -ml-10">
+      <div data-fade
+        class="flex items-start flex-col space-y-14 -ml-10 mt-4 opacity-0 translate-y-6 transition-all duration-[1200ms] ease-out">
         <div class="flex items-start flex-shrink-0">
           <img src="assets/nasa.gif" class="w-48 -ml-10" />
           <div class="-ml-4 mt-4">
@@ -188,60 +193,105 @@
   </section>
 
   <!-- communities -->
-  <section data-fade
-    class="mx-auto p-10 opacity-0 translate-y-6 transition-all duration-[1200ms] ease-out dark:bg-inherit">
+  <section data-fade class="opacity-0 translate-y-6 transition-all duration-[1500ms] ease-out p-10">
+    <h2 class="text-3xl font-semibold px-10 p-10">My Communities</h2>
 
-    <div>
-      <h2 class="text-3xl font-semibold p-10">My Communities</h2>
-    </div>
-    <div class="w-full max-w-7xl mx-auto flex md:flex-row items-start justify-between gap-[90px] overflow-visible">
-      <div>
-        <img src="assets/csi.png" class="w-30 h-24 rounded-2xl shadow-md mb-6" />
-        <h2 class="text-3xl font-semibold mb-4">Columbia Space Initiative</h2>
-        <p class="text-neutral-500 leading-relaxed">
-          Columbia’s largest engineering club dedicated to the pursuit of knowledge in near-space, space, and beyond.
-        </p>
-      </div>
-      <div class="flex-col items-center gap-6 overflow-x-visible overflow-y-visible pb-6 snap-x no-scrollbar">
-        <div
-          class="snap-start shrink-0 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-xl rounded-lg p-2 rotate-[-4deg] w-64">
-          <img src="assets/csi-jpl.jpg" class="rounded-md w-full h-40 object-cover" />
-          <p class="text-xs text-neutral-400 mt-1">CSI at JPL!</p>
-        </div>
-        <div
-          class="snap-start shrink-0 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-xl rounded-lg p-2 rotate-[2deg] w-64">
-          <img src="assets/suits.png" class="rounded-md w-full h-40 object-cover" />
-          <p class="text-xs text-neutral-400 mt-1">
-            2024 NASA SUITS Mission
-          </p>
-        </div>
-      </div>
-      <div class="flex items-center gap-10 overflow-x-visible overflow-y-visible pb-6 snap-x no-scrollbar">
-        <div>
-          <img src="assets/amps.png" class="w-30 h-24 rounded-2xl shadow-md mb-6" />
-          <h2 class="text-3xl font-semibold mb-4">AMPS Student Board</h2>
+    <div class="p-10 w-full max-w-7xl mx-auto 
+              flex gap-16 overflow-x-auto overflow-y-visible 
+              snap-x snap-mandatory no-scrollbar">
+
+      <div class="snap-start flex flex-col md:flex-row gap-8 flex-shrink-0">
+        <div class="flex flex-col gap-4 max-w-[260px]">
+          <img src="assets/amps.png" class="w-24 h-auto object-contain rounded-2xl shadow-md" />
+          <h2 class="text-3xl font-semibold">AMPS @ Columbia</h2>
           <p class="text-neutral-500 leading-relaxed">
-            We represent all graduate students in the applied math & applied physics department and work to enhance
-            their
-            experience at Columbia.
+            Representing graduate students in Applied Math & Applied Physics
           </p>
         </div>
-        <div class="flex items-center gap-6 overflow-x-visible overflow-y-visible pb-6 snap-x no-scrollbar">
-          <div
-            class="snap-start shrink-0 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-xl rounded-lg p-2 rotate-[-4deg] w-64">
+        <!-- <div class="flex flex-col gap-6">
+          <div class="flex-shrink-0 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 
+                    shadow-xl rounded-lg p-2 rotate-[-4deg] w-64">
             <img src="assets/board.jpg" class="rounded-md w-full h-40 object-cover" />
             <p class="text-xs text-neutral-400 mt-1">Our Board!</p>
           </div>
+        </div> -->
+      </div>
+
+      <div class="snap-start flex flex-col md:flex-row gap-8 flex-shrink-0">
+        <div class="flex flex-col gap-4 max-w-[260px]">
+          <img src="assets/csi.png" class="w-24 h-24 object-contain rounded-2xl shadow-md" />
+          <h2 class="text-3xl font-semibold">Columbia Space Initiative</h2>
+          <p class="text-neutral-500 leading-relaxed">
+            Student developer on the NASA SUITS challenge as part of Columbia’s largest engineering club
+          </p>
+        </div>
+        <div class="flex flex-col gap-6">
+          <div class="flex-shrink-0 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 
+                    shadow-xl rounded-lg p-2 rotate-[-4deg] w-64">
+            <img src="assets/csi-jpl.jpg" class="rounded-md w-full h-40 object-cover" />
+            <p class="text-xs text-neutral-400 mt-1">CSI at JPL!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="snap-start flex flex-col md:flex-row gap-8 flex-shrink-0">
+        <div class="flex flex-col gap-4 max-w-[260px]">
+          <img src="assets/gwc.png" class="w-24 h-24 object-contain rounded-2xl shadow-md" />
+          <h2 class="text-3xl font-semibold">Girls Who Code</h2>
+          <p class="text-neutral-500 leading-relaxed">
+            Previously mentored high school students through the College Loop program
+          </p>
+        </div>
+      </div>
+
+      <div class="snap-start flex flex-col md:flex-row gap-8 flex-shrink-0">
+        <div class="flex flex-col gap-4 max-w-[260px]">
+          <img src="assets/wit.png" class="w-24 h-24 object-contain rounded-2xl shadow-md" />
+          <h2 class="text-3xl font-semibold">Women in Tech</h2>
+          <p class="text-neutral-500 leading-relaxed">
+            Previously helped foster inclusivity through supportive spaces and
+            professional development opportunities
+            <br>
+            <i>Sponsored by Girls Who Code, Rewrite the Code, and Women in Cybersecurity</i>
+          </p>
+        </div>
+      </div>
+
+      <div class="snap-start flex flex-col md:flex-row gap-8 flex-shrink-0">
+        <div class="flex flex-col gap-4 max-w-[260px]">
+          <img src="assets/cpaw.png" class="w-24 h-auto object-contain rounded-2xl shadow-md" />
+          <h2 class="text-3xl font-semibold">CPAW</h2>
+          <p class="text-neutral-500 leading-relaxed">Supporting animal welfare through volunteering with the
+            Communities Promoting Animal Welfare (CPAW) nonprofit organization</p>
+        </div>
+
+        <div class="flex flex-col gap-6">
+          <div class="flex-shrink-0 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 
+                    shadow-xl rounded-lg p-2 rotate-[-4deg] w-64">
+            <img src="assets/news.png" class="rounded-md w-full h-40 object-cover" />
+            <p class="text-xs text-neutral-400 mt-1">Volunteer Spotlight Article</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="snap-start flex flex-col md:flex-row gap-8 flex-shrink-0">
+        <div class="flex flex-col gap-4 max-w-[260px]">
+          <img src="assets/lsamp.png" class="w-24 h-24 object-contain rounded-2xl shadow-md" />
+          <h2 class="text-3xl font-semibold">LSAMP</h2>
+          <p class="text-neutral-500 leading-relaxed">
+            Previously conducted research under the Louis Stokes Alliance for Minority Participation initiative and
+            advised students under the Peer Mentor
+            program
+          </p>
         </div>
       </div>
     </div>
   </section>
 
+
   <!-- footer -->
-  <footer data-fade class="mt-20 py-10 opacity-0 translate-y-6 transition-all duration-[1200ms] ease-out
-         border-t border-neutral-300 dark:border-neutral-800
-         bg-gradient-to-b from-orange-50
-         dark:from-orange-950/20 dark:via-neutral-950/20">
+  <footer
+    class="py-10 border-t border-neutral-300 dark:border-neutral-800 bg-gradient-to-b from-orange-50 dark:from-orange-950/20 dark:via-neutral-950/20">
     <div class="max-w-6xl mx-auto px-6 text-center space-y-4">
       <div class="flex items-center justify-center gap-6 text-xl">
         <a href="https://github.com/Jss2326"
