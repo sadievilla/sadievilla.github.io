@@ -29,7 +29,7 @@
 </head>
 
 <body class="font-sans antialiased
-             bg-neutral-100 text-neutral-900
+             bg-sky-50 text-neutral-900
              dark:bg-neutral-900 dark:text-neutral-200">
   <div class="max-w-5xl mx-auto px-6 py-10">
     <!-- theme toggle -->
@@ -56,13 +56,13 @@
       <!-- left col -->
       <div class="flex-column mt-14">
         <!-- pfp -->
-        <img src="assets/pfp.jpg" class="w-[240px] h-[340px] 
+        <img src="assets/pfp.jpg" class="w-[240px] h-[340px]
             border rounded-xl border border-neutral-300 
             shadow-md shadow-black/10
             dark:border-neutral-700 dark:shadow-black/40" alt="Profile photo">
         <!-- contact -->
-        <section class="mt-4 flex flex-wrap gap-4">
-          <ul class="ml-1.5 space-y-3 text-lg">
+        <section class="mt-4 flex flex-wrap">
+          <ul class="ml-1 space-y-1 text-lg">
             <li class="flex items-center space-x-3">
               <span class="text-neutral-600 dark:text-neutral-300">
                 <i class="fa-brands fa-github"></i>
@@ -98,8 +98,8 @@
           <div>
             <h1 class="text-4xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Jessica Sadie
               Villanueva</h1>
-            <p class="mt-2 text-neutral-600 dark:text-neutral-400">Researching the interfaces between modeling,
-              autonomy, and machine intelligence.</p>
+            <p class="mt-2 text-neutral-600 dark:text-neutral-400">Building intelligent systems that help people explore
+              and understand complex worlds ₊⟡⋆.</p>
           </div>
           <model-viewer src="assets/cat.glb" alt="3D Cat" auto-rotate rotation-per-second="20deg" camera-controls
             class="no-scrollbar" orientation="0deg 0deg 250deg" disable-zoom interaction-prompt="none"
@@ -124,7 +124,7 @@
         <!-- message block -->
         <section class="mt-12 grid sm:grid-cols- w-full">
           <a class="block sm:w-[550px] rounded-xl p-6 transition
-       bg-white/80 border border-neutral-200 hover:bg-neutral-50
+       bg-neutral-50 border border-neutral-200
        dark:bg-neutral-800/40 dark:border-neutral-700 dark:hover:bg-neutral-800">
             <p class="text-neutral-400"> <i>I'm always happy to connect – please feel free to reach out!</i></p>
           </a>
@@ -134,11 +134,13 @@
   </div>
 
   <!-- experience -->
-  <section class="max-w-6xl mx-auto p-10">
+  <section
+    class="mx-auto p-10 translate-y-6 transition-all
+         bg-gradient-to-r to-orange-50 from-sky-50 dark:from-orange-950/20 dark:via-neutral-950/20 dark:to-blue-950/15">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
       <!-- left -->
       <div>
-        <h2 class="text-3xl font-semibold">Work Experience</h2>
+        <h2 class="text-3xl ml-24 font-semibold">Work Experience</h2>
       </div>
 
       <!-- right col -->
@@ -157,7 +159,8 @@
           </div>
         </div>
 
-        <div class="flex items-start gap-12">
+        <div data-fade
+          class="flex items-start gap-12 opacity-0 translate-y-6 transition-all duration-[1200ms] ease-out">
           <img src="assets/ll-black.png" class="block dark:hidden w-14 ml-7">
           <img src="assets/ll-white.png" class="hidden dark:block w-14 ml-7">
           <div>
@@ -165,14 +168,14 @@
             <p class="text-neutral-500">Student Research Intern · Summer 2025</p>
           </div>
         </div>
-        <div class="flex items-start gap-6">
+        <div data-fade class="flex items-start gap-6 opacity-0 translate-y-6 transition-all duration-[1200ms] ease-out">
           <img src="assets/nsf.png" class="w-28" />
           <div>
             <h3 class="text-xl font-semibold">LSAMP</h3>
             <p class="text-neutral-500">Undergraduate Student Researcher · 2021–2024</p>
           </div>
         </div>
-        <div class="flex items-start gap-6">
+        <div data-fade class="flex items-start gap-6 opacity-0 translate-y-6 transition-all duration-[1200ms] ease-out">
           <img src="assets/upenn.png" class="w-28" />
           <div>
             <h3 class="text-xl font-semibold">University of Pennsylvania</h3>
@@ -185,10 +188,11 @@
   </section>
 
   <!-- communities -->
-  <section>
+  <section data-fade
+    class="mx-auto p-10 opacity-0 translate-y-6 transition-all duration-[1200ms] ease-out dark:bg-inherit">
 
     <div>
-      <h2 class="text-3xl font-semibold m-10 p-10">My Communities</h2>
+      <h2 class="text-3xl font-semibold p-10">My Communities</h2>
     </div>
     <div class="w-full max-w-7xl mx-auto flex md:flex-row items-start justify-between gap-[90px] overflow-visible">
       <div>
@@ -233,63 +237,105 @@
     </div>
   </section>
 
+  <!-- footer -->
+  <footer data-fade class="mt-20 py-10 opacity-0 translate-y-6 transition-all duration-[1200ms] ease-out
+         border-t border-neutral-300 dark:border-neutral-800
+         bg-gradient-to-b from-orange-50
+         dark:from-orange-950/20 dark:via-neutral-950/20">
+    <div class="max-w-6xl mx-auto px-6 text-center space-y-4">
+      <div class="flex items-center justify-center gap-6 text-xl">
+        <a href="https://github.com/Jss2326"
+          class="text-neutral-600 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400 transition">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/sadievillanueva"
+          class="text-neutral-600 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400 transition">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:jss2326@columbia.edu"
+          class="text-neutral-600 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400 transition">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+        © <span id="year"></span> Jessica Sadie Villanueva ·
+        <a href="#top" class="text-blue-600 dark:text-blue-400 hover:underline">
+          Back to top ↑
+        </a>
+      </p>
+
+    </div>
+  </footer>
+
   <script>
-      (function () {
-        const root = document.documentElement;
-        const btn = document.getElementById('theme-toggle');
-        const label = document.getElementById('theme-label');
-        const sun = document.getElementById('icon-sun');
-        const moon = document.getElementById('icon-moon');
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const btn = document.getElementById('theme-toggle');
+      const label = document.getElementById('theme-label');
+      const sun = document.getElementById('icon-sun');
+      const moon = document.getElementById('icon-moon');
 
-        function setIcons(theme) {
-          if (theme === 'dark') {
-            sun.classList.remove('hidden');
-            moon.classList.add('hidden');
-            // label.textContent = 'Light';
-          } else {
-            sun.classList.add('hidden');
-            moon.classList.remove('hidden');
-            // label.textContent = 'Dark';
-          }
+      function setIcons(theme) {
+        if (theme === 'dark') {
+          sun.classList.remove('hidden');
+          moon.classList.add('hidden');
+          // label.textContent = 'Light';
+        } else {
+          sun.classList.add('hidden');
+          moon.classList.remove('hidden');
+          // label.textContent = 'Dark';
         }
-        function currentTheme() {
-          return root.classList.contains('dark') ? 'dark' : 'light';
+      }
+      function currentTheme() {
+        return root.classList.contains('dark') ? 'dark' : 'light';
+      }
+      function applyTheme(theme) {
+        if (theme === 'dark') {
+          root.classList.add('dark');
+          localStorage.theme = 'dark';
+        } else {
+          root.classList.remove('dark');
+          localStorage.theme = 'light';
         }
-        function applyTheme(theme) {
-          if (theme === 'dark') {
-            root.classList.add('dark');
-            localStorage.theme = 'dark';
-          } else {
-            root.classList.remove('dark');
-            localStorage.theme = 'light';
-          }
-          setIcons(theme);
-        }
-        applyTheme(currentTheme());
+        setIcons(theme);
+      }
+      applyTheme(currentTheme());
 
-        btn.addEventListener('click', () => {
-          applyTheme(currentTheme() === 'dark' ? 'light' : 'dark');
-        });
-      })();
+      btn.addEventListener('click', () => {
+        applyTheme(currentTheme() === 'dark' ? 'light' : 'dark');
+      });
+    })();
   </script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       document.body.classList.add("fade-in");
     });
   </script>
-  <style>
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 0.7s ease-out forwards;
-    }
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("[data-fade]");
 
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-  </style>
-</body>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // fade in when entering view
+              entry.target.classList.add("opacity-100", "translate-y-0");
+            } else {
+              // reset animation when leaving view
+              entry.target.classList.remove("opacity-100", "translate-y-0");
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      sections.forEach((sec) => observer.observe(sec));
+    });
+  </script>
 </body>
 
 </html>
